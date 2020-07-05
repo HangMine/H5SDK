@@ -1,0 +1,3 @@
+VUE_APP_CLIENT_URL = "https://rh.diaigame.com/h5plat/play/package_code/P0008065"
+
+VUE_APP_CLIENT_URL_TEST = "http://premixsdk.921.com/h5plat/play/package_code/P0008065"

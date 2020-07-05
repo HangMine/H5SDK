@@ -1,0 +1,87 @@
+@import '@/assets/css/var.scss';
+@import '@/assets/css/iconfont.scss';
+
+body {
+  margin: 0;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // text-align: center;
+  color: #2c3e50;
+}
+
+// vant模态框兼容PC版
+.modal-wrap {
+  max-width: 100%;
+}
+
+// link格式的按钮
+.link {
+  color: $theme-color;
+  font-size: 13px;
+
+  + .link {
+    margin-left: 10px;
+  }
+}
+
+// 表单标题
+.form-title {
+  margin: 0;
+  padding: 32px 16px 16px;
+  color: rgba(69, 90, 100, 0.6);
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+// 游戏窗口
+#gameFrame {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// 支付窗口
+#ln-pay {
+  position: fixed;
+  z-index: 2020;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+  // 禁止页面加载时会先执行transition
+  &.preload {
+    transition: none;
+  }
+  &.is-show {
+    transform: translateY(0);
+  }
+  // 关闭按钮
+  #pay-close {
+    text-align: right;
+    border-bottom: 1px solid #dcdfe6;
+    .iconfont {
+      display: inline-block;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+    }
+  }
+  // 支付iframe
+  #payFrame {
+    height: calc(100% - 40px);
+    width: 100%;
+    overflow: auto;
+  }
+}
